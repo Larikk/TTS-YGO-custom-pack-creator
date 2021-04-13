@@ -1,0 +1,21 @@
+.container {
+    max-width: 960px;
+}
+
+.rarity-list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-rarity-button {
+    background-color: transparent;
+    border: none;
+}
+
+.remove-rarity-button:hover {
+    color: red;
+}
+
+th, td {
+    text-align: center;
+}
