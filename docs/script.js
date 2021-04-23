@@ -167,14 +167,16 @@ function removeRatioTableColumn(rarity) {
 // #############################
 
 function addRarityTab(rarity) {
+    const rarityId = rarity.replace(" ", "-").toLowerCase()
+
     // Button
     const button = document.createElement("button")
     button.className = "nav-link"
-    button.id = rarity + "-tab"
+    button.id = rarityId + "-tab"
     button.type = "button"
     button.innerText = rarity
     button.setAttribute("data-bs-toggle", "tab")
-    button.setAttribute("data-bs-target", "#" + rarity + "-tab-page")
+    button.setAttribute("data-bs-target", "#" + rarityId + "-tab-page")
     button.setAttribute("role", "tab")
 
     const listItem = document.createElement("li")
@@ -187,13 +189,14 @@ function addRarityTab(rarity) {
     const textarea = document.createElement("textarea")
     textarea.className = "form-control"
     textarea.setAttribute("rows", "20")
-    textarea.setAttribute("placeholder", "33396948\n08124921\n44519536\n70903634\n07902349")
+    //textarea.setAttribute("placeholder", "33396948\n08124921\n44519536\n70903634\n07902349")
+    textarea.setAttribute("placeholder", rarityId)
 
     const page = document.createElement("div")
-    page.id = rarity + "-tab-page"
+    page.id = rarityId + "-tab-page"
     page.className = "tab-pane fade"
     page.setAttribute("role", "tabpanel")
-    page.setAttribute("aria-labelledby", rarity + "-tab")
+    page.setAttribute("aria-labelledby", rarityId + "-tab")
     page.appendChild(textarea)
 
     // Add to page
